@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Transform: AWS::Serverless-2016-10-31
+
+Description: Get user Lambda function
+
+Resources:
+
+  getUser:
+
+    Type: AWS::Serverless::Function
+
+    Properties:
+
+      Handler: getuser_lambda_function.lambda_handler
+
+      Runtime: python3.12
+
+      CodeUri: ./getuser_lambda_function.py
+
+      Description: AWS Lambda function that returns "All the entriies of the dynamodb!"
+
+      MemorySize: 128
+
+      Timeout: 10
+
+      Policies:
+
+      - AWSLambdaBasicExecutionRole
