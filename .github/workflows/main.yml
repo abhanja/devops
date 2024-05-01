@@ -28,8 +28,8 @@ jobs:
 
       - name: Configure AWS Credentials
         run: |
-          aws configure set aws_access_key_id ${{ AKIAXYKJP7BZLXNL4UEE }}
-          aws configure set aws_secret_access_key ${{ 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 }}
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws configure ser default.region eu-north-1
 
 
