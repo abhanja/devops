@@ -38,16 +38,13 @@ jobs:
           aws-region: us-east-1
       - name: Create DynamoDB table
         run: |
-           aws dynamodb create-table \
-           --table-name MyTable \
-           --attribute-definitions \
+         aws dynamodb create-table \
+         --table-name MyTable \
+         --attribute-definitions \
            AttributeName=Id,AttributeType=S \
            AttributeName=Name,AttributeType=S \
-           # Add more attributes as needed
-           --key-schema \
+         --key-schema \
            AttributeName=Id,KeyType=HASH \
-           # Add more key attributes as needed
-           --provisioned-throughput \
+         --provisioned-throughput \
            ReadCapacityUnits=5,WriteCapacityUnits=5 \
-           # Adjust read and write capacity units as needed
-           --region us-east-1
+         --region us-east-1
