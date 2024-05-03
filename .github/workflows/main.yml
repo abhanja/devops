@@ -49,3 +49,8 @@ jobs:
          --provisioned-throughput \
            ReadCapacityUnits=5,WriteCapacityUnits=5 \
          --region us-east-1
+      - name: Create API Gateway
+        run: |
+          aws apigateway create-rest-api \
+          --name "MyAPI" \
+          --region us-east-1
